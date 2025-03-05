@@ -37,7 +37,7 @@ initDb()
 
     // Routes
     app.use("/api/auth", authRouter);
-    app.use("/tasks", taskRouter);
+    app.use("/api/tasks", taskRouter);
 
     // Error handling middleware
     app.use((err: any, req: Request, res: Response, next: any) => {
@@ -45,7 +45,7 @@ initDb()
       res.status(500).json({ message: "Something broke!" });
     });
 
-    const PORT = process.env.PORT || 3001;
+    const PORT = process.env.PORT || 3000;
     const server = app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
